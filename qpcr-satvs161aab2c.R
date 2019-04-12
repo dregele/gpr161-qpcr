@@ -6,6 +6,8 @@ pl1 <- pl1 %>% group_by(sample, target) %>% mutate(group = strsplit(sample, "\\.
 
 pl1.n <- normalize(pl1, c("ef1a", "rpl13"))
 
+write.csv(pl1.n, "2018-09-04 sat vs gpr161aab+ 2cell.csv")
+
 pl1.plot <- pl1.n %>% filter(target %in% c("gpr161b", "gpr161a")) %>%
   filter(!sample == "gpr161aab.2") # removed outlier sample
 
